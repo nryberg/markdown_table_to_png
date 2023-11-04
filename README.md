@@ -19,4 +19,4 @@ Useful for converting Markdown tables to PNGs for later import.
 
 Results:
 
-![Example Table](table.png)
+![Example Table](fixed_table.png)

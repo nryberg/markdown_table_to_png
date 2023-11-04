@@ -11,12 +11,28 @@ Useful for converting Markdown tables to PNGs for later import.
 
 ## Example Table
 
+```markdown
 | fruit  | price  |
 |--------|--------|
 | apple  | 2.05   |
 | pear   | 1.37   |
 | orange | 3.09   |
+```
 
 Results:
 
 ![Example Table](fixed_table.png)
+
+## Todo's:
+
+- [ ] Add support for more table styles.
+- [ ] Add support for more Markdown styles.
+- [ ] Add support for more image formats. (Currently only PNG)
+- [ ] Add support for more image manipulation. (Currently only resizing)
+- [ ] Allow Command Line Arguments
+- [ ] Allow for multiple tables in one image.
+- [ ] Datestamp the output image name if there are multiple
+- [ ] Allow different colors for the table.
+- [ ] Build out the table.css file to allow for more customization.
+- [ ] Add a header for the table
+- [ ] Add a footer for the table

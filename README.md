@@ -23,13 +23,14 @@ Results:
 
 ![Example Table](fixed_table.png)
 
-## Todo's:
+## Tasks:
+
+- [x] Allow Command Line Arguments
 
 - [ ] Add support for more table styles.
 - [ ] Add support for more Markdown styles.
 - [ ] Add support for more image formats. (Currently only PNG)
 - [ ] Add support for more image manipulation. (Currently only resizing)
-- [ ] Allow Command Line Arguments
 - [ ] Allow for multiple tables in one image.
 - [ ] Datestamp the output image name if there are multiple
 - [ ] Allow different colors for the table.

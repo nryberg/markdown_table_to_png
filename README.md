@@ -23,6 +23,20 @@ Results:
 
 ![Example Table](fixed_table.png)
 
+## Usage
+
+```shell
+python ./markdown_table_to_png.py -i table.md -o table.png
+```
+
+### Command Line Arguments
+
+| Argument | Description | Default |
+|----------|-------------|---------|
+| -i       | Input file  | table.md |
+| -o       | Output file | table.png |
+
+
 ## Tasks:
 
 - [x] Allow Command Line Arguments

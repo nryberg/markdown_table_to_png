@@ -33,8 +33,8 @@ python ./markdown_table_to_png.py -i table.md -o table.png
 
 | Argument | Description | Default |
 |----------|-------------|---------|
-| -i       | Input file  | table.md |
-| -o       | Output file | table.png |
+| `-i`       | Input file  | table.md |
+| `-o`       | Output file | table.png |
 
 
 ## Tasks:

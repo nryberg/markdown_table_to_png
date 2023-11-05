@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from html2image import Html2Image
 import markdown
 from PIL import Image, ImageOps

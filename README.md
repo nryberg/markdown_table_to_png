@@ -41,6 +41,7 @@ python ./markdown_table_to_png.py -i table.md -o table.png
 
 - [x] Allow Command Line Arguments
 
+- [ ] Figure out the column width question - is it controlled by the page?
 - [ ] Add support for more table styles.
 - [ ] Add support for more Markdown styles.
 - [ ] Add support for more image formats. (Currently only PNG)

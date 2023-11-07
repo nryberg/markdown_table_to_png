@@ -6,6 +6,39 @@ from PIL import Image, ImageOps
 import sys, getopt
 import os
 
+
+
+default_css = '''
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+thead tr {
+    background-color: #3061b0;
+    color: #ffffff;
+    text-align: left;
+}
+th,
+td {
+    padding: 12px 15px;
+}
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #3061b0;
+}
+'''
+
 def copyname(input_markdown_file):
 
     # Reverse the string to just get the file name
@@ -47,7 +80,8 @@ def remove_temp_file():
 def main(argv):
     input_markdown_file = ''
     output_png_file = ''
-    opts, args = getopt.getopt(argv,"hi:o:c",["ifile=","ofile="])
+    table_css = default_css
+    opts, args = getopt.getopt(argv,"hi:o:c:",["ifile=","ofile=", "cssfile="])
     for opt, arg in opts:
             if opt == '-h':
                 print ('markdown_table_to_png.py -i <input markdown file> -o <output png file>')
@@ -57,13 +91,13 @@ def main(argv):
                 output_png_file = copyname(input_markdown_file)
             elif opt in ("-o", "--ofile"):
                 output_png_file = arg
+            elif opt in ("-c", "--cssfile"):
+                with open(arg, 'r') as f:
+                    file_css = f.read()
+                    table_css = file_css
 
     print ('Input file is ', input_markdown_file)
     print ('Output file is ', output_png_file)
-
-    # Read in the CSS File
-    with open('table.css', 'r') as f:
-        table_css = f.read()
 
     with open(input_markdown_file, 'r') as f:
         md = f.read()

@@ -31,11 +31,11 @@ python ./markdown_table_to_png.py table.md -o table.png
 
 ### Command Line Arguments
 
-| Argument | Description | Default |
-|----------|-------------|---------|
-| (default)      | Input file  | table.md |
-| `-o`       | Output file | table.png |
-| `-c`    | CSS File  | table.css |
+| Argument | Description | Default | Notes |
+|----------|-------------|---------| ----- |
+| (default)      | Input file  | table.md | You must have a source file |
+| `-o`       | Output file | table.png | Optional - will use source file name if not provided |
+| `-c`    | CSS File  | table.css |  Optional - will use default CSS if not provided |
 
 
 ## CSS

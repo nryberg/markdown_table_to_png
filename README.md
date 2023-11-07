@@ -26,14 +26,14 @@ Results:
 ## Usage
 
 ```shell
-python ./markdown_table_to_png.py -i table.md -o table.png
+python ./markdown_table_to_png.py table.md -o table.png
 ```
 
 ### Command Line Arguments
 
 | Argument | Description | Default |
 |----------|-------------|---------|
-| `-i`       | Input file  | table.md |
+| (default)      | Input file  | table.md |
 | `-o`       | Output file | table.png |
 | `-c`    | CSS File  | table.css |
 

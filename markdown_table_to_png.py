@@ -5,6 +5,7 @@ import markdown
 from PIL import Image, ImageOps
 import sys, getopt
 import os
+import argparse
 
 
 
@@ -81,25 +82,25 @@ def main(argv):
     input_markdown_file = ''
     output_png_file = ''
     table_css = default_css
-    opts, args = getopt.getopt(argv,"hi:o:c:",["ifile=","ofile=", "cssfile="])
-    for opt, arg in opts:
-            if opt == '-h':
-                print ('markdown_table_to_png.py -i <input markdown file> -o <output png file>')
-                sys.exit()
-            elif opt in ("-i", "--ifile"):
-                input_markdown_file = arg
-                output_png_file = copyname(input_markdown_file)
-            elif opt in ("-o", "--ofile"):
-                output_png_file = arg
-            elif opt in ("-c", "--cssfile"):
-                with open(arg, 'r') as f:
-                    file_css = f.read()
-                    table_css = file_css
+
+    argParser = argparse.ArgumentParser(
+        prog='markdown_table_to_png.py',
+        description='Convert markdown table to png file')
+    argParser.add_argument("input_markdown_file", help="input markdown file")
+    argParser.add_argument("-o", "--ofile", help="output png file", dest='output_png_file')
+    argParser.add_argument("-c", "--cssfile", help="css file", dest='table_css')
+    args = argParser.parse_args()
+
+    input_markdown_file = args.input_markdown_file
+    if args.output_png_file:
+        output_png_file = args.output_png_file
+    else:
+        output_png_file = copyname(input_markdown_file)
 
     print ('Input file is ', input_markdown_file)
     print ('Output file is ', output_png_file)
 
-    with open(input_markdown_file, 'r') as f:
+    with open( input_markdown_file, 'r') as f:
         md = f.read()
         html = markdown_to_html(md) # = markdown.markdown(md,extensions=['tables'])
         html_to_png(html, 'temp.png', table_css)
